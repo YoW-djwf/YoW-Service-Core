@@ -1,9 +1,10 @@
-﻿namespace YoW.Service.Core.Api.Configurations;
-
-public static class ServiceProviderConfiguration
+﻿namespace YoW.Service.Core.Api.Configurations
 {
-  public static WebApplicationBuilder UseServiceProviderFactory(this WebApplicationBuilder builder)
+  public static class ServiceProviderConfiguration
   {
-    return builder;
+    public static WebApplicationBuilder UseServiceProviderFactory(this WebApplicationBuilder builder)
+    {
+      return builder;
+    }
   }
 }

@@ -1,23 +1,20 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using YoW.Service.Core.Api.Configurations.Filters;
 
-namespace YoW.Service.Core.Api.Configurations.Configurations
+namespace YoW.Service.Core.Api.Configurations
 {
   public static class ControllersConfiguration
   {
-    public static IServiceCollection AddControllersConfiguration(this IServiceCollection services)
+    public static WebApplicationBuilder AddControllersConfiguration(this WebApplicationBuilder builder)
     {
-      services.AddRouting(cfg =>
+      builder.Services.AddRouting(cfg =>
       {
         cfg.LowercaseUrls = true;
         cfg.LowercaseQueryStrings = true;
       });
 
-      services.AddControllers(cfg =>
+      builder.Services.AddControllers(cfg =>
       {
         cfg.Filters.Add<IndicatorAuthorizationFilter>();
         cfg.Filters.Add<GlobalActionHandlingFilter>();
@@ -28,21 +25,21 @@ namespace YoW.Service.Core.Api.Configurations.Configurations
         cfg.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
         cfg.SerializerSettings.Formatting = Formatting.Indented;
         cfg.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-      }).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+      });
 
-      return services;
+      return builder;
     }
 
-    public static IApplicationBuilder UseControllersConfiguration(this IApplicationBuilder builder)
+    public static WebApplication UseControllersConfiguration(this WebApplication app)
     {
-      builder.UseStaticFiles();
-      builder.UseRouting();
-      builder.UseEndpoints(cfg =>
+      app.UseStaticFiles();
+      app.UseRouting();
+      app.UseEndpoints(cfg =>
       {
         cfg.MapControllers();
       });
 
-      return builder;
+      return app;
     }
   }
 }

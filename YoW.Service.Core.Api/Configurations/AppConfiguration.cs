@@ -1,32 +1,28 @@
-﻿namespace YoW.Service.Core.Api.Configurations
+﻿namespace YoW.Service.Core.Api.Configurations;
+
+public static class AppConfiguration
 {
-  public static class AppConfiguration
+  public static WebApplicationBuilder UseAppConfiguration(this WebApplicationBuilder builder, string[] args)
   {
-    public static WebApplicationBuilder ConfigureAppConfiguration(this WebApplicationBuilder builder, string[] args)
-    {
-      builder.Host.ConfigureAppConfiguration((host, config) => {
-        config.Sources.Clear();
+    builder.Host.ConfigureAppConfiguration((host, config) => {
+      var evn = host.HostingEnvironment;
 
-        var evn = host.HostingEnvironment;
+      if (args?.Any() ?? false)
+      {
+        config.AddCommandLine(args);
+      }
 
-        config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-        config.AddJsonFile($"appsettings.{evn.EnvironmentName}.json", optional: true, reloadOnChange: true);
+    });
 
-        config.AddEnvironmentVariables();
+    return builder;
+  }
 
-        if (args != null)
-        {
-          config.AddCommandLine(args);
-        }
+  public static WebApplication AppInitialization(this WebApplication app)
+  {
+    using var scope = app.Services.CreateScope();
 
-      });
+    scope.MigrateDatabase();
 
-      return builder;
-    }
-
-    public static WebApplicationBuilder AppInitialization(this WebApplicationBuilder builder)
-    {
-      return builder;
-    }
+    return app;
   }
 }

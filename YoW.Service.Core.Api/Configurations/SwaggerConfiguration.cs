@@ -1,56 +1,57 @@
 ﻿using Microsoft.OpenApi.Models;
 using YoW.Service.Core.Api.Configurations.Filters;
 
-namespace YoW.Service.Core.Api.Configurations;
-
-public static class SwaggerConfiguration
+namespace YoW.Service.Core.Api.Configurations
 {
-  public static WebApplicationBuilder AddSwaggerConfiguration(this WebApplicationBuilder builder, string name)
+  public static class SwaggerConfiguration
   {
-    builder.Services.AddEndpointsApiExplorer();
-
-    builder.Services.AddSwaggerGen(action =>
+    public static WebApplicationBuilder AddSwaggerConfiguration(this WebApplicationBuilder builder, string name)
     {
-      action.SwaggerDoc("v1", new OpenApiInfo
-      {
-        Title = $"{name} Api",
-        Version = "v1"
-      });
+      builder.Services.AddEndpointsApiExplorer();
 
-      action.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+      builder.Services.AddSwaggerGen(action =>
       {
-        Type = SecuritySchemeType.OAuth2,
-        Flows = new OpenApiOAuthFlows
+        action.SwaggerDoc("v1", new OpenApiInfo
         {
-          AuthorizationCode = new OpenApiOAuthFlow
+          Title = $"{name} Api",
+          Version = "v1"
+        });
+
+        action.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+        {
+          Type = SecuritySchemeType.OAuth2,
+          Flows = new OpenApiOAuthFlows
           {
-            AuthorizationUrl = new Uri("https://localhost:44345/connect/authorize"),
-            TokenUrl = new Uri("https://localhost:44345/connect/token"),
-            Scopes = new Dictionary<string, string>
-                    {
+            AuthorizationCode = new OpenApiOAuthFlow
+            {
+              AuthorizationUrl = new Uri("https://localhost:44345/connect/authorize"),
+              TokenUrl = new Uri("https://localhost:44345/connect/token"),
+              Scopes = new Dictionary<string, string>
+                      {
                               {"api1", $"{name} API - full access"}
-                    }
+                      }
+            }
           }
-        }
+        });
+        action.OperationFilter<AuthorizeCheckOperationFilter>();
       });
-      action.OperationFilter<AuthorizeCheckOperationFilter>();
-    });
 
-    return builder;
-  }
+      return builder;
+    }
 
-  public static WebApplication UseSwaggerConfiguration(this WebApplication app, string name)
-  {
-    app.UseSwagger();
-    app.UseSwaggerUI(action =>
+    public static WebApplication UseSwaggerConfiguration(this WebApplication app, string name)
     {
-      action.SwaggerEndpoint("v1/swagger.json", $"{name} Api v1");
+      app.UseSwagger();
+      app.UseSwaggerUI(action =>
+      {
+        action.SwaggerEndpoint("v1/swagger.json", $"{name} Api v1");
 
-      action.OAuthClientId("api_swagger");
-      action.OAuthAppName($"{name} API - Swagger");
-      action.OAuthUsePkce();
-    });
+        action.OAuthClientId("api_swagger");
+        action.OAuthAppName($"{name} API - Swagger");
+        action.OAuthUsePkce();
+      });
 
-    return app;
+      return app;
+    }
   }
 }

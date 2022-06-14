@@ -2,16 +2,15 @@
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 
-namespace YoW.Infrastructure.EntityFramework;
-
-public static class AppDbContextExtension
+namespace YoW.Infrastructure.EntityFramework
 {
-  public static DbContextOptionsBuilder UseAppDbContext(this DbContextOptionsBuilder<AppDbContext> builder, IConfiguration configuration)
-      => (builder as DbContextOptionsBuilder).UseAppDbContext(configuration);
-  public static DbContextOptionsBuilder UseAppDbContext(this DbContextOptionsBuilder builder, IConfiguration configuration)
+  public static class AppDbContextExtension
   {
-    builder.(configuration.GetConnectionString("default"))
-        .ReplaceService<IDesignTimeDbContextFactory<AppDbContext>, DbContextFactory>();
-    return builder;
+    public static DbContextOptionsBuilder UseAppDbContext<TContext>(this DbContextOptionsBuilder builder, IConfiguration configuration) where TContext : AppDbContextBase
+    {
+      builder.UseSqlServer(configuration.GetConnectionString("default"))
+          .ReplaceService<IDesignTimeDbContextFactory<TContext>, AppDbContextFactory<TContext>>();
+      return builder;
+    }
   }
 }

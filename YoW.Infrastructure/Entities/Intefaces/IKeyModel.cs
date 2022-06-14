@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace YoW.Infrastructure.Models.intefaces
+namespace YoW.Infrastructure.Entities.Intefaces
 {
   public interface IKeyModel
   {

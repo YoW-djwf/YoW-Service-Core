@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace YoW.Infrastructure.Models.intefaces
+namespace YoW.Infrastructure.Entities.Intefaces
 {
   public interface IUpdatedModel
   {
