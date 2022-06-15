@@ -5,13 +5,9 @@ VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoW.Service.Core.Api", "YoW.Service.Core.Api\YoW.Service.Core.Api.csproj", "{32D248EA-960F-4FAB-A45C-A7B0610E968C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoW.Infrastructure", "YoW.Infrastructure\YoW.Infrastructure.csproj", "{64023B1C-54C1-44E3-AA77-499C4893EFC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoW.Service.Core.EntityFramework", "YoW.Service.Core.EntityFramework\YoW.Service.Core.EntityFramework.csproj", "{A32C78EC-F25D-4E40-8185-1B54BE7C17C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoW.Service.Core.EntityFramework", "YoW.Service.Core.EntityFramework\YoW.Service.Core.EntityFramework.csproj", "{A32C78EC-F25D-4E40-8185-1B54BE7C17C7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoW.Service.Core.EntityFramework.SqlServer", "YoW.Service.Core.EntityFramework.SqlServer\YoW.Service.Core.EntityFramework.SqlServer.csproj", "{CF143969-9C79-4824-8B75-4D38A9F6F286}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "YoW.Service.Core", "YoW.Service.Core", "{25821308-02AE-40BE-B280-7F44B22ADD76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoW.Service.Core.EntityFramework.SqlServer", "YoW.Service.Core.EntityFramework.SqlServer\YoW.Service.Core.EntityFramework.SqlServer.csproj", "{CF143969-9C79-4824-8B75-4D38A9F6F286}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +19,6 @@ Global
 		{32D248EA-960F-4FAB-A45C-A7B0610E968C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32D248EA-960F-4FAB-A45C-A7B0610E968C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32D248EA-960F-4FAB-A45C-A7B0610E968C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{64023B1C-54C1-44E3-AA77-499C4893EFC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{64023B1C-54C1-44E3-AA77-499C4893EFC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{64023B1C-54C1-44E3-AA77-499C4893EFC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{64023B1C-54C1-44E3-AA77-499C4893EFC8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A32C78EC-F25D-4E40-8185-1B54BE7C17C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A32C78EC-F25D-4E40-8185-1B54BE7C17C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A32C78EC-F25D-4E40-8185-1B54BE7C17C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -38,11 +30,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{32D248EA-960F-4FAB-A45C-A7B0610E968C} = {25821308-02AE-40BE-B280-7F44B22ADD76}
-		{A32C78EC-F25D-4E40-8185-1B54BE7C17C7} = {25821308-02AE-40BE-B280-7F44B22ADD76}
-		{CF143969-9C79-4824-8B75-4D38A9F6F286} = {25821308-02AE-40BE-B280-7F44B22ADD76}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {526B8D3B-11B4-4D03-AC24-2901E3FBBE2F}

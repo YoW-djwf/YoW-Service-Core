@@ -21,6 +21,7 @@
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
+    <PackageReference Include="YoW.Infrastructure" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,7 +29,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\YoW.Infrastructure\YoW.Infrastructure.csproj" />
     <ProjectReference Include="..\YoW.Service.Core.EntityFramework\YoW.Service.Core.EntityFramework.csproj" />
   </ItemGroup>
 

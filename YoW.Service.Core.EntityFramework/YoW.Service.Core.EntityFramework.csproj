@@ -8,10 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.5" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\YoW.Infrastructure\YoW.Infrastructure.csproj" />
+    <PackageReference Include="YoW.Infrastructure" Version="1.0.0" />
   </ItemGroup>
 
 </Project>
