@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoW.Service.Core.EntityFram
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoW.Service.Core.EntityFramework.SqlServer", "YoW.Service.Core.EntityFramework.SqlServer\YoW.Service.Core.EntityFramework.SqlServer.csproj", "{CF143969-9C79-4824-8B75-4D38A9F6F286}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoW.Service.Core", "YoW.Service.Core\YoW.Service.Core.csproj", "{A1EC71BC-B855-43FC-9AB1-FC2DD345461A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CF143969-9C79-4824-8B75-4D38A9F6F286}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF143969-9C79-4824-8B75-4D38A9F6F286}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF143969-9C79-4824-8B75-4D38A9F6F286}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1EC71BC-B855-43FC-9AB1-FC2DD345461A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1EC71BC-B855-43FC-9AB1-FC2DD345461A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1EC71BC-B855-43FC-9AB1-FC2DD345461A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1EC71BC-B855-43FC-9AB1-FC2DD345461A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

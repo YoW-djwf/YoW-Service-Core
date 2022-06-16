@@ -5,8 +5,8 @@ using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Linq;
-using YoW.Infrastructure.Exceptions;
-using YoW.Infrastructure.Models;
+using YoW.Exceptions;
+using YoW.Models;
 
 namespace YoW.Service.Core.Api.Configurations.Filters
 {

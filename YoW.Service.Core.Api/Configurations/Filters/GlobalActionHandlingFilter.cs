@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using YoW.Infrastructure.Models;
+using YoW.Models;
 
 namespace YoW.Service.Core.Api.Configurations.Filters
 {

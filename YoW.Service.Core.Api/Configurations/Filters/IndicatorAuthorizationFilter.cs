@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
-using YoW.Infrastructure.Interfaces;
+using YoW.Interfaces;
 
 namespace YoW.Service.Core.Api.Configurations.Filters
 {

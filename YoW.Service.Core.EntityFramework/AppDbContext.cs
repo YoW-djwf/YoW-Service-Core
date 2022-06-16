@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using YoW.Infrastructure.EntityFramework;
-using YoW.Infrastructure.Interfaces;
+using YoW.EntityFramework;
+using YoW.Interfaces;
 using YoW.Service.Core.EntityFramework.Entities;
 using YoW.Service.Core.EntityFramework.EntityConfigurations;
 

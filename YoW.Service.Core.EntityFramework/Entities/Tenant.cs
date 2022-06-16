@@ -2,7 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using YoW.Infrastructure.Entities.Abstracts;
+using YoW.Entities.Abstracts;
 
 namespace YoW.Service.Core.EntityFramework.Entities
 {

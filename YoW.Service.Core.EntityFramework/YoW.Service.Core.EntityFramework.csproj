@@ -7,8 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.5" />
-    <PackageReference Include="YoW.Infrastructure" Version="1.0.0" />
+    <PackageReference Include="YoW" Version="0.1.0" />
   </ItemGroup>
 
 </Project>
