@@ -8,7 +8,7 @@ public static class DbContextConfiguration
   public static WebApplicationBuilder AddDbContextConfiguration(this WebApplicationBuilder builder)
   {
     builder.Services.AddEntityFrameworkSqlServer()
-      .AddSqlServer<AppDbContext>("default", opts => { }, opts => { });
+      .AddSqlServer<AppDbContext>("default");
     return builder;
   }
 

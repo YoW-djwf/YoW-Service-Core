@@ -2,9 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Data.SqlClient;
 using Newtonsoft.Json;
-using System;
 using System.Collections;
-using System.Linq;
 using YoW.Exceptions;
 using YoW.Models;
 
@@ -35,7 +33,7 @@ namespace YoW.Service.Core.Api.Configurations.Filters
       {
         Status = status,
         Message = message,
-        Errors = errorList?.Select(k => new ErrorModel { Message = k }).ToArray() ?? null
+        Errors = errorList?.Select(k => new ErrorModel { Message = k }).ToArray() ?? Array.Empty<ErrorModel>()
       };
     }
   }

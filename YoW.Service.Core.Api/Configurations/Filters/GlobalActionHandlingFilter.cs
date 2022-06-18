@@ -23,7 +23,7 @@ namespace YoW.Service.Core.Api.Configurations.Filters
       context.Result = new JsonResult(new SuccessResponseModel
       {
         Status = 200,
-        Data = objectResult.Value
+        Data = objectResult.Value ?? new()
       });
     }
 

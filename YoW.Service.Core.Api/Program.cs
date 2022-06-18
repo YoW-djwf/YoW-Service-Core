@@ -1,7 +1,8 @@
+using YoW.Extensions;
 using YoW.Service.Core.Api.Configurations;
 
 var builder = WebApplication.CreateBuilder(args)
-  .UseAppConfiguration(args)
+  .AddAppConfiguration(args)
   .UseSerilog()
   .UseServiceProviderFactory()
   .AddCorsConfiguration()
@@ -9,8 +10,11 @@ var builder = WebApplication.CreateBuilder(args)
   .AddControllersConfiguration()
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
   .AddSwaggerConfiguration("YoW")
-  .AddDbContextConfiguration();
-builder.Services.AddHealthChecks();
+  .AddDbContextConfiguration()
+  .AddServiceConfiguration();
+builder.Services
+  .AddCoreService()
+  .AddHealthChecks();
 
 var app = builder.Build();
 

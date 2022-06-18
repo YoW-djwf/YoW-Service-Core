@@ -13,5 +13,6 @@ public class TenantConfiguration : IEntityTypeConfiguration<Tenant>
     builder.HasOne(r => r.GlobalTenant)
       .WithMany(r => r.Tenants)
       .HasForeignKey(r => r.GlobalTenantId);
+    builder.HasIndex(r => r.GlobalTenantId).HasFilter("[IsGlobalTenant] = true OR [GlobalTenantId] IS NOT NULL");
   }
 }

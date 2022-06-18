@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace YoW.Service.Core.Api.Configurations.Filters
 {
@@ -20,18 +18,21 @@ namespace YoW.Service.Core.Api.Configurations.Filters
         operation.Responses.Add("403", new OpenApiResponse { Description = "Forbidden" });
 
         operation.Security = new List<OpenApiSecurityRequirement>
+          {
+            new OpenApiSecurityRequirement
             {
-                new OpenApiSecurityRequirement
+              [
+                new OpenApiSecurityScheme
                 {
-                    [
-                        new OpenApiSecurityScheme {Reference = new OpenApiReference
-                        {
-                            Type = ReferenceType.SecurityScheme,
-                            Id = "oauth2"}
-                        }
-                    ] = new[] {"api1"}
+                  Reference = new OpenApiReference
+                  {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "oauth2"
+                  }
                 }
-            };
+              ] = new[] {"api1"}
+            }
+          };
       }
     }
   }

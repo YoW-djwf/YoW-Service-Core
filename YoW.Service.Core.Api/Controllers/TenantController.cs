@@ -6,4 +6,5 @@ namespace YoW.Service.Core.Api.Controllers;
 [ApiController]
 public class TenantController : ControllerBase
 {
+  
 }
